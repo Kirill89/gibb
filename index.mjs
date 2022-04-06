@@ -1,4 +1,8 @@
 import {readFileSync, writeFileSync} from 'node:fs';
+import {fileURLToPath} from 'node:url';
+import {dirname, join} from 'node:path'
+
+const dataDir = join(dirname(fileURLToPath(import.meta.url)), 'data');
 
 const acceptedChars = 'abcdefghijklmnopqrstuvwxyz ';
 const pos = [...acceptedChars].reduce((acc, char, idx) => {
@@ -35,10 +39,10 @@ export function avgTransitionProb(l, logProbMat) {
 
 // Write a simple model as a JSON file
 export function train(
-  modelPath = './data/model.json',
-  datasetPath = './data/big.txt',
-  goodProbesPath = './data/good.txt',
-  badProbesPath = './data/bad.txt') {
+  modelPath = join(dataDir, 'model.json'),
+  datasetPath = join(dataDir, 'big.txt'),
+  goodProbesPath = join(dataDir, 'good.txt'),
+  badProbesPath = join(dataDir, 'bad.txt')) {
   const k = acceptedChars.length;
   // Assume we have seen 10 of each character pair.  This acts as a kind of
   // prior or smoothing factor.  This way, if we see a character transition
@@ -97,7 +101,7 @@ function loadModelCached(modelPath) {
   return model;
 }
 
-export function isGibberish(text, modelPath = './data/model.json') {
+export function isGibberish(text, modelPath = join(dataDir, 'model.json')) {
   const model = loadModelCached(modelPath);
 
   return avgTransitionProb(text, model.mat) <= model.thresh;

@@ -1,6 +1,6 @@
 {
   "name": "gibb",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Gibberish detection algorithm based on Markov chain",
   "main": "index.mjs",
   "scripts": {
