@@ -1,5 +1,5 @@
 {
-  "name": "gibberish",
+  "name": "gibb",
   "version": "1.0.0",
   "description": "Gibberish detection algorithm based on Markov chain",
   "main": "index.mjs",
