@@ -1,6 +1,6 @@
 {
   "name": "gibb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gibberish detection algorithm based on Markov chain",
   "main": "index.mjs",
   "scripts": {
@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/Kirill89/gibberish#readme",
   "files": [
-    "./data/model.json",
+    "data/model.json",
     "README.md",
     "index.mjs"
   ]
