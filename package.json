@@ -1,0 +1,25 @@
+{
+  "name": "gibberish",
+  "version": "1.0.0",
+  "description": "Gibberish detection algorithm based on Markov chain",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "node ./test.mjs",
+    "prepack": "node ./build.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kirill89/gibberish.git"
+  },
+  "author": "Kirill Efimov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kirill89/gibberish/issues"
+  },
+  "homepage": "https://github.com/Kirill89/gibberish#readme",
+  "files": [
+    "./data/model.json",
+    "README.md",
+    "index.mjs"
+  ]
+}
